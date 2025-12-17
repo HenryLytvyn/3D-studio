@@ -1,0 +1,118 @@
+.customSelect {
+  position: relative;
+}
+
+.customSelectTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 8px 8px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+
+  transition: border-color 250ms ease;
+}
+
+.customSelectTrigger:hover {
+  border-color: var(--color-text-primary);
+}
+
+.customSelectOptionsContainer {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  width: 121px;
+  margin-top: 4px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms ease;
+  background-color: var(--color-bg-primary);
+}
+
+.customSelectOptions {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: calc(100% - 8px);
+  /* scrollbar right gap */
+  border-radius: 12px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px 0;
+  margin: 0;
+  margin-top: 4px;
+  background-clip: content-box;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.customSelect.open .customSelectOptions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.customSelect.open .customSelectOptionsContainer {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.arrowIcon {
+  fill: var(--color-text-primary);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  transform: rotate();
+  transition: transform 250ms ease;
+}
+
+.customSelect.open .arrowIcon {
+  transform: rotate(180deg);
+}
+
+.customSelectItem {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+
+  padding: 4px 18px;
+  cursor: pointer;
+  user-select: none;
+
+  color: var(--color-text-primary);
+
+  transition: background-color 250ms ease;
+}
+
+.selected {
+  color: var(--color-text-primary);
+}
+
+.customSelectItem:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.customSelectItem.selected {
+  color: var(--color-text-primary);
+}
+
+.customSelectOptions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.customSelectOptions::-webkit-scrollbar-track {
+  margin: 12px 0;
+}
+
+.customSelectOptions::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 10px;
+}

@@ -8,7 +8,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
 export function Icon({ name, className, ...props }: IconProps) {
   return (
     <svg className={className} {...props}>
-      <use href={`/icons/sprite.svg#${name}`} />
+      <use href={`/sprite.svg#${name}`} />
     </svg>
   );
 }
