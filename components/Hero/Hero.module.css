@@ -1,0 +1,130 @@
+.hero {
+  padding-top: 127px;
+  padding-bottom: 127px;
+
+  background-image:
+    linear-gradient(rgba(10, 31, 45, 0.4) 0%, rgba(10, 31, 45, 0.4) 100%),
+    image-set(url('/img/hero/hero-mobile.png') 1x);
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.mainTitle {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+
+  margin-bottom: 24px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+
+  margin-bottom: 24px;
+}
+
+.BtnsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.requestBtn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+
+  display: inline-block;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 16px;
+  padding: 10px 24px;
+
+  color: var(--color-text-secondary);
+  background-color: var(--color-text-primary);
+
+  transition:
+    border-color 250ms ease,
+    background-color 250ms ease,
+    color 250ms ease,
+    transform 0.15s ease;
+}
+
+.requestBtn:hover,
+.requestBtn:focus,
+.requestBtn:active {
+  color: var(--color-text-primary);
+  /* border-color: #5f839c;
+  background-color: #5f839c; */
+
+  /* border-color: #1fb6c9;
+  background-color: #1fb6c9; */
+
+  border-color: #2f80ed;
+  background-color: #2f80ed;
+  transform: translateY(-1px);
+}
+
+.whatsAppBtn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 10px 24px;
+
+  transition:
+    border-color 250ms ease,
+    background-color 250ms ease,
+    transform 0.15s ease;
+}
+
+.whatsAppBtn:hover,
+.whatsAppBtn:focus,
+.whatsAppBtn:active {
+  border-color: #25d366;
+  background-color: #25d366;
+  transform: translateY(-1px);
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding: 287px 336px;
+    background-image:
+      linear-gradient(rgba(10, 31, 45, 0.4) 0%, rgba(10, 31, 45, 0.4) 100%),
+      image-set(url('/img/hero/hero-desktop.png') 1x);
+    background-size: cover;
+  }
+
+  .mainTitle {
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    margin-bottom: 24px;
+  }
+
+  .text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+
+    margin-bottom: 32px;
+  }
+
+  .BtnsWrapper {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+}
