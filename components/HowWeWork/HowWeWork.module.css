@@ -1,15 +1,9 @@
 .section {
 }
 
-.sectionTitle {
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-align: center;
-
+/* .sectionTitle {
   margin-bottom: 48px;
-}
+} */
 
 .stepsList {
   display: flex;

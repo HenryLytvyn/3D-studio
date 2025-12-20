@@ -1,0 +1,38 @@
+.section {
+}
+
+.sectionTitle {
+}
+
+.worksList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.workItem {
+}
+
+.workImage {
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+  }
+
+  .sectionTitle {
+  }
+
+  .worksList {
+    flex-direction: row;
+    gap: 31px;
+  }
+
+  .workItem {
+  }
+
+  .workImage {
+    width: 100%;
+  }
+}
