@@ -1,0 +1,57 @@
+/* RequestForm.module.css */
+
+.form {
+}
+
+.fieldsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.fieldItem {
+  width: 100%;
+}
+
+.addFilesInput {
+  display: none;
+}
+
+.addFilesBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px dashed var(--color-text-primary);
+  border-radius: 12px;
+  width: 100%;
+  padding: 36px 24px;
+  cursor: pointer;
+  background-color: var(--color-bg-primary);
+  transition:
+    color 250ms ease,
+    background-color 250ms ease;
+}
+
+.addFilesBtn:hover {
+  background-color: var(--color-hover-secondary);
+}
+
+.addFilesBtnText {
+}
+
+.addFilesBtnIcon {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text-primary);
+}
+
+/* ====================== */
+
+.filesList {
+  /* height: auto;
+  transition: height 500ms ease; */
+}
+
+.fileItem {
+}

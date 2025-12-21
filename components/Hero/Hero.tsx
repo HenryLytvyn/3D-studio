@@ -10,11 +10,15 @@ export default function Hero() {
           Печатаем всё, кроме денег. Работаем как с небольшими заказами, так и с
           более сложными проектами.
         </p>
-        <div className={css.BtnsWrapper}>
-          <Link href="/" className={css.requestBtn}>
+        <div className={css.LinksWrapper}>
+          <Link href="/" className={css.requestLink}>
             Оставить заявку
           </Link>
-          <Link href="/" className={css.whatsAppBtn}>
+          <Link
+            href="https://wa.me/447404373041"
+            target="_blanket"
+            className={css.whatsAppLink}
+          >
             Написать в WhatsApp
           </Link>
         </div>

@@ -1,0 +1,87 @@
+.section {
+}
+
+.contactInfoWrapper {
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+
+  margin-bottom: 32px;
+}
+
+.address {
+}
+
+.addressList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.addressItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.addressIcon {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text-primary);
+}
+
+.addressLink {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+
+  /* text-decoration-skip-ink: none; */
+}
+
+.addressLocation {
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+  }
+
+  .contactInfoWrapper {
+  }
+
+  .sectionTitle {
+  }
+
+  .text {
+  }
+
+  .address {
+  }
+
+  .addressList {
+  }
+
+  .addressItem {
+  }
+
+  .addressIcon {
+  }
+
+  .addressLink {
+  }
+
+  .addressLocation {
+  }
+}

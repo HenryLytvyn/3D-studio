@@ -47,7 +47,8 @@ ul {
 
   --color-text-primary: #ffffff;
   --color-text-secondary: #020807;
-  --color-hover: #d1dbe2;
+  --color-hover: #2f80ed;
+  --color-hover-secondary: #0d2636;
   --color-border: rgba(255, 255, 255, 0.2);
 }
 
