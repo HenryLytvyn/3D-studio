@@ -1,3 +1,4 @@
+import { Icon } from '@/components/Icon/Icon';
 import css from './FilesList.module.css';
 
 interface Props {
@@ -20,12 +21,6 @@ export default function FilesList({
             src={`${URL.createObjectURL(file)}`}
           />
 
-          {/* <span className={css.fileName}>{file.name}</span> */}
-
-          {/* <span className={css.fileSize}>
-                        {(file.size / 1024).toFixed(1)} KB
-                      </span> */}
-
           <button
             type="button"
             className={css.removeFileBtn}
@@ -37,7 +32,7 @@ export default function FilesList({
               //     setIsUploadDisabled(false);
             }}
           >
-            X
+            <Icon name="icon-remove" className={css.removeBtnIcon} />
           </button>
         </li>
       ))}

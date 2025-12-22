@@ -43,7 +43,7 @@ ul {
 /* BASE */
 
 :root {
-  --color-bg-primary: #0a1f2d;
+  --color-bg-primary: rgb(10, 31, 45);
 
   --color-text-primary: #ffffff;
   --color-text-secondary: #020807;
