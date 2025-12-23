@@ -9,6 +9,8 @@ import FormField from '@/components/FormField/FormField';
 import Button from '@/components/Button/Button';
 import FilesList from './FilesList/FilesList';
 import RequestFormIcon from './RequestFormIcon';
+import { ALLOWED_3D_EXTENSIONS, ALLOWED_IMAGE_TYPES } from '@/lib/constants';
+import { getFileKind } from '@/lib/utils/getFileKind';
 
 interface Request {
   name: string;
@@ -26,28 +28,21 @@ const initialValues: Request = {
 
 //! ============================
 
-const ALLOWED_IMAGE_TYPES = [
-  'image/png',
-  'image/jpg',
-  'image/jpeg',
-  'image/webp',
-];
-
-const ALLOWED_3D_EXTENSIONS = ['stl', 'obj', 'gltf', 'glb'];
-
 const MAX_FILES = 4;
 
-function isAllowedFile(file: File) {
-  const extension = file.name.split('.').pop()?.toLowerCase();
+// function isAllowedFile(file: File) {
+//   const extension = file.name.split('.').pop()?.toLowerCase();
 
-  const isImage = ALLOWED_IMAGE_TYPES.includes(file.type);
-  const is3D = extension ? ALLOWED_3D_EXTENSIONS.includes(extension) : false;
+//   const imageFile = ALLOWED_IMAGE_TYPES.includes(file.type);
+//   const model3DFile = extension
+//     ? ALLOWED_3D_EXTENSIONS.includes(extension)
+//     : false;
 
-  console.log('isImage: ', isImage);
-  console.log('is3D: ', is3D);
+//   console.log('isImage: ', imageFile);
+//   console.log('is3D: ', model3DFile);
 
-  return isImage || is3D;
-}
+//   return imageFile || model3DFile;
+// }
 
 export default function RequestForm() {
   // const uploadFilesQuentity = 4;
@@ -127,7 +122,7 @@ export default function RequestForm() {
                   }
 
                   const validFiles = selectedFiles.filter(file => {
-                    const isValid = isAllowedFile(file);
+                    const isValid = getFileKind(file);
                     if (!isValid) {
                       alert(
                         `Файл "${file.name}" имеет неподдерживаемый формат`

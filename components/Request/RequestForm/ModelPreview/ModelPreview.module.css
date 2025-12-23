@@ -1,0 +1,12 @@
+.modelPreview {
+  width: 100%;
+  height: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modelPreview canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
