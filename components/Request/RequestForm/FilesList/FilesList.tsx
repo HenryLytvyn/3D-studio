@@ -6,15 +6,10 @@ import ModelPreview from '../ModelPreview/ModelPreview';
 
 interface Props {
   filesArray: File[];
-  //   filesQuentity: number;
   removeFile: (array: File[]) => void;
 }
 
-export default function FilesList({
-  filesArray,
-  //   filesQuentity,
-  removeFile,
-}: Props) {
+export default function FilesList({ filesArray, removeFile }: Props) {
   return (
     <ul className={css.filesList}>
       {filesArray.map((file, index) => {
@@ -23,20 +18,20 @@ export default function FilesList({
         return (
           <li key={`${file.name}-${index}`} className={css.fileItem}>
             {kind === 'image' && <ImagePreview file={file} />}
-
             {kind === '3d' && <ModelPreview file={file} />}
-            {/* {kind === '3d' && <div className={css.modelPreview}>3D MODEL</div>} */}
 
-            <button
-              type="button"
-              className={css.removeFileBtn}
-              onClick={() => {
-                const updatedFiles = filesArray.filter((_, i) => i !== index);
-                removeFile(updatedFiles);
-              }}
-            >
-              <Icon name="icon-remove" className={css.removeBtnIcon} />
-            </button>
+            {(kind === 'image' || kind === '3d') && (
+              <button
+                type="button"
+                className={css.removeFileBtn}
+                onClick={() => {
+                  const updatedFiles = filesArray.filter((_, i) => i !== index);
+                  removeFile(updatedFiles);
+                }}
+              >
+                <Icon name="icon-remove" className={css.removeBtnIcon} />
+              </button>
+            )}
           </li>
         );
       })}

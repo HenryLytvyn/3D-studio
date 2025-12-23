@@ -2,15 +2,15 @@
 
 'use client';
 
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik } from 'formik';
 import css from './RequestForm.module.css';
-import { useEffect, useId, useState } from 'react';
+import { useId, useState } from 'react';
 import FormField from '@/components/FormField/FormField';
 import Button from '@/components/Button/Button';
 import FilesList from './FilesList/FilesList';
 import RequestFormIcon from './RequestFormIcon';
-import { ALLOWED_3D_EXTENSIONS, ALLOWED_IMAGE_TYPES } from '@/lib/constants';
 import { getFileKind } from '@/lib/utils/getFileKind';
+import RequestFormSchemaValidate from '@/lib/validation/RequestForm/RequestFormSchemaValidate';
 
 interface Request {
   name: string;
@@ -26,44 +26,18 @@ const initialValues: Request = {
   filesUrl: [],
 };
 
-//! ============================
-
 const MAX_FILES = 4;
 
-// function isAllowedFile(file: File) {
-//   const extension = file.name.split('.').pop()?.toLowerCase();
-
-//   const imageFile = ALLOWED_IMAGE_TYPES.includes(file.type);
-//   const model3DFile = extension
-//     ? ALLOWED_3D_EXTENSIONS.includes(extension)
-//     : false;
-
-//   console.log('isImage: ', imageFile);
-//   console.log('is3D: ', model3DFile);
-
-//   return imageFile || model3DFile;
-// }
-
 export default function RequestForm() {
-  // const uploadFilesQuentity = 4;
   const fieldId = useId();
   const [isUploadDisabled, setIsUploadDisabled] = useState<boolean>(false);
 
-  console.log(isUploadDisabled);
-
-  // useEffect(() => {
-  //   return () => {
-  //     previews.forEach(url => URL.revokeObjectURL(url));
-  //   };
-  // }, [previews]);
-
-  // function removeFile(updatedFiles: File[]) {
-  //   formik.setFieldValue('filesUrl', updatedFiles);
-  //   if (updatedFiles.length <= uploadFilesQuentity) setIsUploadDisabled(false);
-  // }
-
   return (
-    <Formik<Request> initialValues={initialValues} onSubmit={() => {}}>
+    <Formik<Request>
+      initialValues={initialValues}
+      validationSchema={RequestFormSchemaValidate}
+      onSubmit={() => {}}
+    >
       {formik => (
         <Form className={css.form}>
           <ul className={css.fieldsList}>
@@ -73,6 +47,7 @@ export default function RequestForm() {
                 placeholder="Ваше имя"
                 name="name"
                 type="text"
+                isRequired={true}
               />
             </li>
 
@@ -82,6 +57,7 @@ export default function RequestForm() {
                 placeholder="Контакт"
                 name="contact"
                 type="text"
+                isRequired={true}
               />
             </li>
 
@@ -92,6 +68,7 @@ export default function RequestForm() {
                 name="message"
                 type="text"
                 as="textarea"
+                isRequired={true}
               />
             </li>
 
@@ -157,36 +134,6 @@ export default function RequestForm() {
                 }}
               />
 
-              {/* {formik.values.filesUrl.length > 0 && (
-                <ul className={css.filesList}>
-                  {formik.values.filesUrl.map((file, index) => (
-                    <li key={`${file.name}-${index}`} className={css.fileItem}>
-                      <img
-                        className={css.uploadImage}
-                        src={`${URL.createObjectURL(file)}`}
-                      />
-
-                      <button
-                        type="button"
-                        className={css.removeFileBtn}
-                        onClick={() => {
-                          const updatedFiles = formik.values.filesUrl.filter(
-                            (_, i) => i !== index
-                          );
-                          formik.setFieldValue('filesUrl', updatedFiles);
-                          if (
-                            formik.values.filesUrl.length <= uploadFilesQuentity
-                          )
-                            setIsUploadDisabled(false);
-                        }}
-                      >
-                        X
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )} */}
-
               {formik.values.filesUrl.length > 0 && (
                 <FilesList
                   filesArray={formik.values.filesUrl}
@@ -200,20 +147,35 @@ export default function RequestForm() {
                 />
               )}
 
+              {/* Upload BUTTON */}
+
               {!isUploadDisabled && (
-                <label
-                  htmlFor={`${fieldId}-addFiles`}
-                  className={css.addFilesBtn}
-                >
-                  <span className={css.addFilesBtnText}>Загрузить файлы</span>
-                  <RequestFormIcon />
-                </label>
+                <>
+                  <label
+                    htmlFor={`${fieldId}-addFiles`}
+                    className={css.addFilesBtn}
+                  >
+                    <span className={css.addFilesBtnText}>Загрузить файлы</span>
+                    <RequestFormIcon />
+                  </label>
+
+                  <p className={css.addFilesDescription}>
+                    Вы можете добавить до четырех файлов (это не обязательно):
+                    .png, jpeg, webp, .stl, .obj, .gltf, .glb.
+                  </p>
+                  <p className={css.addFilesDescription}>
+                    Размер изображений - до 5Мб.
+                  </p>
+                  <p className={`${css.addFilesDescription} ${css.lastChild}`}>
+                    Размер файлов моделей - до 20Мб.
+                  </p>
+                </>
               )}
 
               <ErrorMessage
                 component="span"
                 name="filesUrl"
-                // className={`${css.errorMessage} ${css.errorMessageImage}`}
+                className={css.errorMessage}
               />
             </li>
           </ul>
@@ -223,8 +185,6 @@ export default function RequestForm() {
             type="submit"
             width="100%"
           />
-
-          <pre>{formik.values.filesUrl.map(f => f.name).join('\n')}</pre>
         </Form>
       )}
     </Formik>

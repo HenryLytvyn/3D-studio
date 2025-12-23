@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .fieldItem {
@@ -28,6 +28,7 @@
   padding: 36px 24px;
   cursor: pointer;
   background-color: var(--color-bg-primary);
+  margin-bottom: 12px;
   transition:
     color 250ms ease,
     background-color 250ms ease;
@@ -38,12 +39,26 @@
 }
 
 .addFilesBtnText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .addFilesBtnIcon {
   width: 24px;
   height: 24px;
   fill: var(--color-text-primary);
+}
+
+.addFilesDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.lastChild {
+  margin-bottom: 0;
 }
 
 /* ====================== */

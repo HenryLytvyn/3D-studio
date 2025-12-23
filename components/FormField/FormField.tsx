@@ -12,6 +12,7 @@ interface Props {
   placeholder: string;
   name: string;
   type: string;
+  isRequired?: boolean;
   width?: string;
   padding?: string;
   className?: string;
@@ -23,6 +24,7 @@ export default function FormField({
   placeholder,
   name,
   type,
+  isRequired,
   width = '100%',
   padding = '5px',
   className = '',
@@ -33,7 +35,8 @@ export default function FormField({
   return (
     <div className={css.fieldWrapper}>
       <label htmlFor={`${fieldId}-${name}`} className={css.inputLabel}>
-        {label}
+        <span>{label}</span>
+        {isRequired === true && <span className={css.requiredMark}> *</span>}
       </label>
 
       <Field
