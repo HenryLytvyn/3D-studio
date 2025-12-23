@@ -16,7 +16,6 @@ export default function ModelPreview({ file }: Props) {
 
   useEffect(() => {
     if (!mountRef.current) return;
-
     const scene = new THREE.Scene();
     scene.background = new THREE.Color('#f5f5f5');
 
