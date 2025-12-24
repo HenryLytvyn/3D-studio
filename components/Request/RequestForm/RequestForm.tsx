@@ -36,6 +36,7 @@ export default function RequestForm() {
     <Formik<Request>
       initialValues={initialValues}
       validationSchema={RequestFormSchemaValidate}
+      validateOnMount
       onSubmit={() => {}}
     >
       {formik => (
@@ -184,6 +185,7 @@ export default function RequestForm() {
             variant="submit"
             type="submit"
             width="100%"
+            isDisabled={!formik.isValid}
           />
         </Form>
       )}

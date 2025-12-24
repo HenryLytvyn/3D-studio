@@ -53,6 +53,7 @@ ul {
 
   --color-border: rgba(255, 255, 255, 0.2);
   --color-error: rgb(229, 83, 83);
+  --color-disabled: rgb(127, 139, 148);
 }
 
 body {

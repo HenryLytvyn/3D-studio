@@ -48,12 +48,12 @@
 .inputField:-webkit-autofill:focus {
   caret-color: var(--color-text-primary);
   -webkit-text-fill-color: var(--color-text-primary);
-  box-shadow: 0 0 0px 1000px var(--color-bg-primary) inset; /* фон */
+  box-shadow: 0 0 0px 1000px var(--color-bg-primary) inset; /* background */
   border: none;
 }
 
 .inputField:-webkit-autofill:not(:focus) {
-  box-shadow: 0 0 0 1000px var(--color-bg-primary) inset; /* фон без фокуса */
+  box-shadow: 0 0 0 1000px var(--color-bg-primary) inset; /* background without focus */
   -webkit-text-fill-color: var(--color-text-primary);
 }
 
