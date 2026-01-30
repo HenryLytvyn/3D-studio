@@ -54,10 +54,14 @@ ul {
   --color-border: rgba(255, 255, 255, 0.2);
   --color-error: rgb(229, 83, 83);
   --color-disabled: rgb(127, 139, 148);
+  --color-success: #2ecc71;
 }
 
 body {
   font-family: var(--font-roboto), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;

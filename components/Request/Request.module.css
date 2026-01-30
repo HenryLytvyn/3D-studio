@@ -53,12 +53,23 @@
 
 .addressLocation {
 }
+/* 
+@media screen and (min-width: 1440px) {
+
+} */
 
 @media screen and (min-width: 1440px) {
   .section {
   }
 
+  .requestContainer {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 80px; */
+  }
+
   .contactInfoWrapper {
+    width: 600px;
   }
 
   .sectionTitle {

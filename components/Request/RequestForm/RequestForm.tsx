@@ -28,7 +28,8 @@ const initialValues: Request = {
 };
 
 const MAX_FILES = 4;
-let isFormSubmitted = true;
+// let isFormSubmitted = true;
+let isFormSubmitted;
 
 export default function RequestForm() {
   const fieldId = useId();
@@ -195,7 +196,9 @@ export default function RequestForm() {
       {isFormSubmitted && (
         <>
           <CheckMark />
-          <p>Thank you for request!</p>
+          <p className={css.successText}>
+            Ваша заявка отправлена! Скоро мы с вами свяжемся.
+          </p>
         </>
       )}
     </>

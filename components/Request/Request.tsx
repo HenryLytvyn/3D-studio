@@ -6,7 +6,7 @@ import RequestForm from './RequestForm/RequestForm';
 export default function Request() {
   return (
     <section className={css.section}>
-      <div className="container">
+      <div className={`container ${css.requestContainer}`}>
         <div className={css.contactInfoWrapper}>
           <h2 className={css.sectionTitle}>Оставить заявку</h2>
           <p className={css.text}>
@@ -50,7 +50,6 @@ export default function Request() {
             </ul>
           </address>
         </div>
-
         <RequestForm />
       </div>
     </section>

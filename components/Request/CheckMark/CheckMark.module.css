@@ -1,13 +1,13 @@
 .wrapper {
   width: 100px;
-  margin: 4em auto 0;
+  margin: 0 auto 48px auto;
 }
 
 .checkmark {
-  stroke: green;
+  stroke: var(--color-success);
   stroke-dashoffset: 745.74853515625;
   stroke-dasharray: 745.74853515625;
-  animation: dash 2s ease-out forwards infinite;
+  animation: dash 2s ease-out forwards;
 }
 
 @keyframes dash {
