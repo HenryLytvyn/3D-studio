@@ -36,3 +36,17 @@
   height: 24px;
   fill: red;
 }
+
+@media screen and (min-width: 1440px) {
+  .filesList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .fileItem {
+    width: 285px;
+    height: 285px;
+  }
+}

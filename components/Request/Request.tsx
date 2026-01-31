@@ -7,8 +7,9 @@ export default function Request() {
   return (
     <section className={css.section}>
       <div className={`container ${css.requestContainer}`}>
+        {' '}
+        <h2 className={css.sectionTitle}>Оставить заявку</h2>
         <div className={css.contactInfoWrapper}>
-          <h2 className={css.sectionTitle}>Оставить заявку</h2>
           <p className={css.text}>
             Вы можете связаться с нами любым удобным способом — через форму или
             напрямую.
@@ -50,7 +51,9 @@ export default function Request() {
             </ul>
           </address>
         </div>
-        <RequestForm />
+        <div className={css.formWrapper}>
+          <RequestForm />
+        </div>
       </div>
     </section>
   );

@@ -63,19 +63,38 @@
   }
 
   .requestContainer {
-    display: flex;
-    justify-content: space-between;
-    /* gap: 80px; */
-  }
-
-  .contactInfoWrapper {
-    width: 600px;
+    display: grid;
+    column-gap: 80px;
+    row-gap: 24px;
+    grid-template-columns: 600px auto;
+    grid-template-rows: 122px auto;
+    /* justify-content: space-between; */
   }
 
   .sectionTitle {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .contactInfoWrapper {
+    grid-column: 1;
+    grid-row: 2;
+    /* width: 600px; */
+  }
+
+  .formWrapper {
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 
   .text {
+    font-weight: 400;
+    font-size: 18px;
+
+    line-height: 1.5;
   }
 
   .address {
@@ -91,6 +110,12 @@
   }
 
   .addressLink {
+    text-decoration: none;
+  }
+
+  .addressLink:hover,
+  .addressLink:focus {
+    text-decoration: underline;
   }
 
   .addressLocation {
