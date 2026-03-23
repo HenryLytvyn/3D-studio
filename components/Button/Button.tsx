@@ -3,22 +3,25 @@ import css from './Button.module.css';
 
 interface Props {
   value: string;
-  variant: 'submit';
-  type: 'submit';
+  // variant: 'submit' | 'button';
+  type: 'submit' | 'button';
+  onClick?: () => void;
   width: string;
   isDisabled?: boolean;
 }
 
 export default function Button({
   value,
-  variant,
+  // variant,
   type,
+  onClick,
   width,
   isDisabled = false,
 }: Props) {
   return (
     <button
       type={type}
+      onClick={onClick}
       className={clsx(css.buttonSubmit, isDisabled && css.buttonDisabled)}
     >
       {value}

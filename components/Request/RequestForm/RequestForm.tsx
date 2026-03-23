@@ -4,7 +4,7 @@
 
 import { ErrorMessage, Form, Formik } from 'formik';
 import css from './RequestForm.module.css';
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import FormField from '@/components/FormField/FormField';
 import Button from '@/components/Button/Button';
 import FilesList from './FilesList/FilesList';
@@ -29,11 +29,21 @@ const initialValues: Request = {
 
 const MAX_FILES = 4;
 // let isFormSubmitted = true;
-let isFormSubmitted;
+// let isFormSubmitted;
 
 export default function RequestForm() {
   const fieldId = useId();
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [showSubmittedText, setShowSubmittedText] = useState(false);
   const [isUploadDisabled, setIsUploadDisabled] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isFormSubmitted) {
+      setTimeout(() => {
+        setShowSubmittedText(true);
+      }, 750);
+    }
+  }, [isFormSubmitted]);
 
   return (
     <>
@@ -161,7 +171,8 @@ export default function RequestForm() {
 
                       <p className={css.addFilesDescription}>
                         Вы можете добавить до четырех файлов (это не
-                        обязательно): .png, jpeg, webp, .stl, .obj, .gltf, .glb.
+                        обязательно) с расширением: .png, jpeg, webp, .stl,
+                        .obj, .gltf, .glb.
                       </p>
                       <p className={css.addFilesDescription}>
                         Размер изображений - до 5Мб.
@@ -183,8 +194,10 @@ export default function RequestForm() {
               </ul>
               <Button
                 value="Отправить заявку"
-                variant="submit"
                 type="submit"
+                // onClick={() => {
+                //   setIsFormSubmitted(!isFormSubmitted);
+                // }}
                 width="100%"
                 isDisabled={!formik.isValid}
               />
@@ -196,7 +209,9 @@ export default function RequestForm() {
       {isFormSubmitted && (
         <>
           <CheckMark />
-          <p className={css.successText}>
+          <p
+            className={`${css.successText} ${showSubmittedText ? css.visible : ''}`}
+          >
             Ваша заявка отправлена! Скоро мы с вами свяжемся.
           </p>
         </>
