@@ -5,7 +5,7 @@ import RequestForm from './RequestForm/RequestForm';
 
 export default function Request() {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="request">
       <div className={`container ${css.requestContainer}`}>
         {' '}
         <h2 className={css.sectionTitle}>Оставить заявку</h2>

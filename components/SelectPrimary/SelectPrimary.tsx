@@ -11,7 +11,7 @@ interface Props {
   options: string[];
   placeholder: string;
   value?: string | undefined;
-  handleChange?: (value: string) => void;
+  handleChange: (value: string) => void;
   symbolBeforeValue?: string;
 }
 
@@ -38,7 +38,7 @@ export default function SelectPrimary({
 
   function handleSelect(option: string) {
     setIsOpen(false);
-    // handleChange(option);
+    handleChange(option);
   }
 
   return (

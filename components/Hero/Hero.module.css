@@ -40,6 +40,9 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  text-align: center;
+
+  width: 212px;
 
   display: inline-block;
   border: 1px solid var(--color-text-primary);

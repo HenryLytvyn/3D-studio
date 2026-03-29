@@ -3,7 +3,7 @@ import css from './OurWorks.module.css';
 
 export default function OurWorks() {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="ourWorks">
       <div className="container">
         <h2 className={css.sectionTitle}>Наши работы</h2>
         <ul className={css.worksList}>

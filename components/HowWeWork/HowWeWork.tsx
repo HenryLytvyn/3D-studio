@@ -3,7 +3,7 @@ import css from './HowWeWork.module.css';
 
 export default function HowWeWork() {
   return (
-    <section className={css.section}>
+    <section className={css.section} id="howWeWork">
       <div className="container">
         <h2 className={css.sectionTitle}>Как мы работаем</h2>
         <ul className={css.stepsList}>
