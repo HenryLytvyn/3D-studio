@@ -2,13 +2,18 @@
 
 import { useMobileMenuOpen } from '@/lib/store/MobileMenuStore';
 import css from './MobileMenuBtn.module.css';
+import { useEffect } from 'react';
 
 export default function MobileMenuBtn() {
   const isMobileMenuOpen = useMobileMenuOpen(state => state.isMobileMenuOpen);
   const setIsMobileMenuOpen = useMobileMenuOpen(
     state => state.setIsMobileMenuOpen
   );
-  const closeMobileMenu = useMobileMenuOpen(state => state.closeMobileMenu);
+  // const closeMobileMenu = useMobileMenuOpen(state => state.closeMobileMenu);
+
+  // useEffect(() => {
+  //   console.log(isMobileMenuOpen);
+  // }, [isMobileMenuOpen]);
 
   return (
     <button

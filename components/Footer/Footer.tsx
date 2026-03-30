@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <section className={css.section}>
+    <footer className={css.footer}>
       <div className="container">
         <div className={css.contentWrapper}>
           <div className={css.logoWrapper}>
@@ -69,6 +69,6 @@ export default function Footer() {
           <p className={css.copyRight}>&copy; 2025 3D печать в Лондоне</p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

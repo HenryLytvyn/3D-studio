@@ -1,6 +1,8 @@
 /* Components/MobileMenuBtn/MobileMenuBtn.module.css */
 
 .button {
+  /* position: relative;
+  z-index: 9; */
   border: none;
   border-radius: 8px;
   padding: 9px 5.5px 8px;

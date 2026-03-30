@@ -5,6 +5,7 @@ import './globals.css';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import HomePageClient from './page.client';
 
 // export const metadata: Metadata = {
 //   title: ,
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: Props) {
           <Header />
           <main>{children}</main>
           <Footer />
+          <HomePageClient />
         </TanStackProvider>
       </body>
     </html>

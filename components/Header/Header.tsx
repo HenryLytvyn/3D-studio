@@ -25,8 +25,8 @@ export default function Header() {
   }
 
   return (
-    <div className="container">
-      <section className={css.header}>
+    <header className={css.header}>
+      <div className={`container ${css.headerContainer}`}>
         <Logo />
         <MobileMenuBtn />
         <nav className={css.nav}>
@@ -57,7 +57,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-      </section>
-    </div>
+      </div>
+    </header>
   );
 }
