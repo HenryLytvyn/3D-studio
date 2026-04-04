@@ -6,6 +6,7 @@ import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import HomePageClient from './page.client';
+import BreakpointInitializer from '@/components/Providers/BreakpointInitializer';
 
 // export const metadata: Metadata = {
 //   title: ,
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="ru">
       <body className={`${lora.variable} ${roboto.variable}`}>
+        <BreakpointInitializer />
         <TanStackProvider>
           <Header />
           <main>{children}</main>

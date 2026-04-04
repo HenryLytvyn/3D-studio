@@ -18,22 +18,38 @@ export default function MobileMenu({ isOpen, handleClick }: MobileMenuProps) {
         <div className={`${css.mobileMenu}  ${isOpen ? css.open : ''}`}>
           <ul className={`container ${css.navList}`}>
             <li className={css.navItem}>
-              <Link href="#howWeWo rk" className={css.navLink}>
+              <Link
+                href="#howWeWork"
+                className={css.navLink}
+                onClick={handleClick}
+              >
                 Как мы работаем
               </Link>
             </li>
             <li className={css.navItem}>
-              <Link href="#ourWorks" className={css.navLink}>
+              <Link
+                href="#ourWorks"
+                className={css.navLink}
+                onClick={handleClick}
+              >
                 Наши работы
               </Link>
             </li>
             <li className={css.navItem}>
-              <Link href="#request" className={css.navLink}>
+              <Link
+                href="#request"
+                className={css.navLink}
+                onClick={handleClick}
+              >
                 Оставить заявку
               </Link>
             </li>
             <li className={css.navItem}>
-              <Link href={CONTACT_PHONE_LINK} className={css.navLink}>
+              <Link
+                href={CONTACT_PHONE_LINK}
+                className={css.navLink}
+                onClick={handleClick}
+              >
                 Телефон
               </Link>
             </li>
@@ -42,12 +58,17 @@ export default function MobileMenu({ isOpen, handleClick }: MobileMenuProps) {
                 href={CONTACT_WHATS_APP_LINK}
                 target="_blanket"
                 className={css.navLink}
+                onClick={handleClick}
               >
                 WhatsApp
               </Link>
             </li>
             <li className={css.navItem}>
-              <Link href={CONTACT_EMAIL_LINK} className={css.navLink}>
+              <Link
+                href={CONTACT_EMAIL_LINK}
+                className={css.navLink}
+                onClick={handleClick}
+              >
                 Email
               </Link>
             </li>

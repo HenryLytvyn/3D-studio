@@ -42,6 +42,10 @@ ul {
 
 /* BASE */
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-bg-primary: rgb(10, 31, 45);
 

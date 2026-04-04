@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { ScreenSize } from '../constants';
 
-type ScreenSize = 'mobile' | 'tablet' | 'desktop';
+type ScreenSize = 'mobile' | 'desktop';
 
 type BreakpointStore = {
   screenSize: ScreenSize | undefined;

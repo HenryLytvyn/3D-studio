@@ -18,20 +18,14 @@ export default function HomePageClient() {
   useLockScroll(isMobileMenuOpen);
 
   useEffect(() => {
-    if (screenSize && screenSize === 'desktop') {
+    if (screenSize === 'desktop') {
       closeMobileMenu();
     }
   }, [screenSize, closeMobileMenu]);
 
-  console.log('HomePageClient');
-
-  useEffect(() => {
-    console.log(isMobileMenuOpen);
-  }, [isMobileMenuOpen]);
-
+  // Browser navigation BACK
   useEffect(() => {
     const handler = () => {
-      console.log('Назад нажали');
       closeMobileMenu();
     };
 
